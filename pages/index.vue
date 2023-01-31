@@ -3,34 +3,19 @@
 <section class="intro">
   <h1>Get the latest tech news!</h1>
 </section>
-<section class="featured-posts">
-
-  <nuxt-link :to="'/posts/' + 1 " class="post-preview"
- >
-  <article >
-<div class="post-thumbnail" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
-  <div class="post-content">
-    <h1>Post Title</h1>
-    <p>preview text</p>
-  </div>
-</div>
-  </article></nuxt-link>
-  <nuxt-link :to="'/posts/' + 2 " class="post-preview"
- >
-  <article >
-<div class="post-thumbnail" style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
-  <div class="post-content">
-    <h1>Post Title</h1>
-    <p>preview text</p>
-  </div>
-</div>
-  </article></nuxt-link>
-</section>
+ <PostList />
 </div>
 </template>
 
 <script>
-
+import PostList from '../components/posts/PostList.vue';
+import PostPreview from '../components/posts/PostPreview.vue';
+export default{
+  components:{
+    PostPreview,
+    PostList
+}
+}
 
 </script>
 
@@ -40,6 +25,7 @@
   position: relative;
   padding: 30px;
   box-sizing: border-box;
+  background-image: url('~assets/images/main-page-background.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -74,39 +60,4 @@
   justify-content: center;
 }
 
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
-}
 </style>
