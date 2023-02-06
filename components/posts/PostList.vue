@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <section class="post-list">
     <PostPreview
       v-for="post in posts"
@@ -9,6 +10,16 @@
       :title="post.title"
       :previewText="post.previewText" />
   </section>
+=======
+ 
+    <section class="featured-posts">
+  <PostPreview v-for="post in posts" :key="post.id"
+  :id="post.id" :is-admin="isAdmin"  :thumbnail="post.thumbnail" :title="post.title" :preview-text="post.previewText" />
+  
+
+</section>
+ 
+>>>>>>> 897fb075bc3371bfbb4ceeefcaff648edf1ac4e5
 </template>
 
 <script>
@@ -23,9 +34,16 @@ export default {
       type: Boolean,
       default: false
     },
+<<<<<<< HEAD
     posts: {
       type: Array,
       required: true
+=======
+    posts:{
+      type: Array,
+      required: true
+
+>>>>>>> 897fb075bc3371bfbb4ceeefcaff648edf1ac4e5
     }
   }
 }
