@@ -1,9 +1,3 @@
-
-import PostList from '../../components/posts/PostList.vue';
-
-
-import PostList from '../../components/posts/PostList.vue';
-
 <template>
   <div class="admin-page">
     <section class="new-post">
@@ -11,7 +5,7 @@ import PostList from '../../components/posts/PostList.vue';
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <PostList isAdmin />
+      <PostList  isAdmin />
     </section>
 
   </div>
