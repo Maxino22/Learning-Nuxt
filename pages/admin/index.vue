@@ -1,32 +1,29 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <AppButton @click="$router.push('/admin/new-post')" >Create Post</AppButton>
+      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <PostList  isAdmin />
+      <PostList isAdmin />
     </section>
-
   </div>
 </template>
 
 <script>
-import PostList from '../../components/posts/PostList.vue';
-import AppButton from '../../components/ui/AppButton.vue';
+import PostList from '@/components/Posts/PostList'
+import AppButton from '@/components/UI/AppButton'
 
-export default{
+export default {
   layout: 'admin',
-  components:{
+  components: {
     PostList,
     AppButton
+  }
 }
-}
-
 </script>
 
-
-<style>
+<style scoped>
 .admin-page {
   padding: 20px;
 }
@@ -40,5 +37,5 @@ export default{
 .existing-posts h1 {
   text-align: center;
 }
-
 </style>
+

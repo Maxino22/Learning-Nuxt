@@ -1,41 +1,40 @@
 <template>
- 
-    <section class="featured-posts">
-  <PostPreview v-for="post in posts" :key="post.id"
-  :id="post.id" :is-admin="isAdmin"  :thumbnail="post.thumbnail" :title="post.title" :preview-text="post.previewText" />
-  
-
-</section>
- 
+  <section class="post-list">
+    <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText" />
+  </section>
 </template>
 
 <script>
-import PostPreview from './PostPreview.vue';
+import PostPreview from '@/components/Posts/PostPreview'
 
-export default{
-  components:{
+export default {
+  components: {
     PostPreview
   },
-  props:{
-    isAdmin:{
+  props: {
+    isAdmin: {
       type: Boolean,
       default: false
     },
-    posts:{
+    posts: {
       type: Array,
       required: true
-
     }
   }
 }
-
-
-
 </script>
+
 
 <style scoped>
 
-.featured-posts {
+.post-list {
   display: flex;
   padding: 20px;
   box-sizing: border-box;
